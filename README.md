@@ -1,8 +1,6 @@
-# WebCraft.dev | Premium Freelance Web Developer Portfolio
+# WebCraft.dev | Premium Freelance Web Development Studio
 
-Official portfolio and client acquisition platform for **Shaunak Kompalwar** — Freelance Full Stack Web Developer based in **Hyderabad, India**.
-
-Live Brand: **WebCraft.dev** (`WebCrafted`)
+Official portfolio and client acquisition platform for **WebCraft.dev** (`WebCrafted`) — Freelance Full Stack Web Development based in **Hyderabad, India**.
 
 ---
 
@@ -26,7 +24,7 @@ d:\Projects\Web Development\webcraft.dev\
 ├── index.html                  # Semantic, accessible HTML5 structure (all 16 prompt sections)
 ├── styles.css                  # Custom cinematic dark design system & responsive layout
 ├── script.js                   # Client-side engine: navigation, form validation, WhatsApp, modals
-├── config.js                   # Central configuration: developer details, WhatsApp, email, endpoints
+├── config.js                   # Central configuration: contact details, WhatsApp, email, endpoints
 ├── 404.html                    # Custom branded 404 Not Found error page
 ├── robots.txt                  # Search engine crawler instructions
 ├── sitemap.xml                 # XML sitemap for SEO discovery
@@ -45,22 +43,23 @@ d:\Projects\Web Development\webcraft.dev\
 
 ## ⚙️ Configuration & Customization (`config.js`)
 
-You can update your personal information, links, and form settings in `config.js` without touching the markup:
+You can update contact information, links, and form settings in `config.js`:
 
 ```javascript
 window.WEBCRAFT_CONFIG = {
-  developerName: "Shaunak Kompalwar",
-  profession: "Freelance Full Stack Web Developer",
   brandName: "WebCrafted",
   brandDomain: "WebCraft.dev",
+  profession: "Freelance Full Stack Web Development",
   location: "Hyderabad, India",
   availabilityStatus: "Available for new projects",
 
-  // 1. WhatsApp Number: Replace with your country code + phone number (e.g., '919876543210')
-  whatsappNumber: "YOUR_WHATSAPP_NUMBER",
+  // 1. Phone & WhatsApp Configuration
+  phoneNumber: "+91 7794835164",
+  whatsappNumber: "917794835164",
+  whatsappPrefillMessage: "Hi WebCraft.dev, I visited your portfolio and would like to discuss a website development project. Could you share more details?",
 
   // 2. Business Email Address
-  emailAddress: "your-email@domain.com",
+  emailAddress: "webbcraft.dev1@gmail.com",
 
   // 3. Social Profiles
   linkedinUrl: "https://www.linkedin.com/in/shaunak-kompalwar-60a5243b6/",
@@ -86,8 +85,9 @@ The inquiry form includes client-side validation, spam honeypot protection, and 
 
 - **Floating WhatsApp Button**: Positioned at the bottom-right corner with a hover tooltip.
 - **Contextual WhatsApp Buttons**: Situated in the contact section and service cards.
+- **Direct Link**: `https://wa.me/917794835164`
 - **Prefilled Message**:
-  > *"Hi Shaunak, I visited your WebCrafted portfolio and would like to discuss a website development project. Could you share more details?"*
+  > *"Hi WebCraft.dev, I visited your portfolio and would like to discuss a website development project. Could you share more details?"*
 
 ---
 

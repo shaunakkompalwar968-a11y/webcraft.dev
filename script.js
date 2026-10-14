@@ -1,6 +1,6 @@
 /**
  * WebCraft.dev (WebCrafted)
- * Developer: Shaunak Kompalwar | Hyderabad, India
+ * Full Stack Web Development Studio | Hyderabad, India
  * Client-Side Application Engine
  */
 
@@ -28,12 +28,18 @@ function applyConfiguration() {
   }
 
   // Update email links
-  if (config.emailAddress && config.emailAddress !== 'shaunak.dev@example.com') {
-    document.querySelectorAll('.config-email').forEach(el => {
-      el.textContent = config.emailAddress;
-      if (el.tagName === 'A') el.href = `mailto:${config.emailAddress}`;
-    });
-  }
+  const targetEmail = config.emailAddress || 'webbcraft.dev1@gmail.com';
+  document.querySelectorAll('.config-email').forEach(el => {
+    el.textContent = targetEmail;
+    if (el.tagName === 'A') el.href = `mailto:${targetEmail}`;
+  });
+
+  // Update phone / WhatsApp links
+  const targetPhone = config.phoneNumber || '+91 7794835164';
+  document.querySelectorAll('.config-phone').forEach(el => {
+    el.textContent = targetPhone;
+    if (el.tagName === 'A') el.href = `tel:${targetPhone.replace(/\s+/g, '')}`;
+  });
 
   // Update social profile links
   if (config.linkedinUrl) {
@@ -133,15 +139,15 @@ function initHeroCodeSandbox() {
   <span style="color:#818cf8;">const</span> body = <span style="color:#818cf8;">await</span> req.json();
   <span style="color:#818cf8;">const</span> cleanData = <span style="color:#fcd34d;">sanitizeInput</span>(body);
 
-  <span style="color:#64748b;">// Deliver instant email notification to Shaunak</span>
+  <span style="color:#64748b;">// Deliver instant email notification</span>
   <span style="color:#818cf8;">await</span> <span style="color:#fcd34d;">sendInquiryEmail</span>(cleanData);
   <span style="color:#818cf8;">return</span> NextResponse.<span style="color:#fcd34d;">json</span>({ success: <span style="color:#34d399;">true</span> });
 }`,
     'config.json': `{
-  <span style="color:#38bdf8;">"developer"</span>: <span style="color:#a7f3d0;">"Shaunak Kompalwar"</span>,
   <span style="color:#38bdf8;">"brand"</span>: <span style="color:#a7f3d0;">"WebCraft.dev"</span>,
   <span style="color:#38bdf8;">"location"</span>: <span style="color:#a7f3d0;">"Hyderabad, India"</span>,
-  <span style="color:#38bdf8;">"performance"</span>: <span style="color:#a7f3d0;">"Responsive &amp; Mobile-First"</span>,
+  <span style="color:#38bdf8;">"contact"</span>: <span style="color:#a7f3d0;">"webbcraft.dev1@gmail.com"</span>,
+  <span style="color:#38bdf8;">"phone"</span>: <span style="color:#a7f3d0;">"+91 7794835164"</span>,
   <span style="color:#38bdf8;">"status"</span>: <span style="color:#34d399;">"Available for new projects"</span>
 }`
   };
@@ -195,7 +201,7 @@ function getWhatsAppUrl(customMessage = null) {
   phone = phone.replace(/[^0-9]/g, '');
 
   const msg = customMessage || config.whatsappPrefillMessage || 
-    'Hi Shaunak, I visited your WebCrafted portfolio and would like to discuss a website development project. Could you share more details?';
+    'Hi WebCraft.dev, I visited your portfolio and would like to discuss a website development project. Could you share more details?';
 
   if (!phone || phone === 'YOUR_WHATSAPP_NUMBER' || phone.length < 8) {
     return null;
@@ -294,7 +300,7 @@ function initInquiryForm() {
 
         if (response.ok) {
           form.reset();
-          showFormNotice('Thank you! Your project inquiry has been delivered. Shaunak will review your requirements and reach out shortly.', 'success');
+          showFormNotice('Thank you! Your project inquiry has been delivered. We will review your requirements and reach out shortly.', 'success');
           showToast('✓ Inquiry submitted successfully!', 'success');
         } else {
           throw new Error('Server returned an error status.');
@@ -329,18 +335,18 @@ function initInquiryForm() {
 
   function openMailtoFallback(data) {
     const config = window.WEBCRAFT_CONFIG || {};
-    const targetEmail = config.emailAddress || 'shaunak.dev@example.com';
+    const targetEmail = config.emailAddress || 'webbcraft.dev1@gmail.com';
 
     const subject = encodeURIComponent(`Project Inquiry: ${data.projectType} - ${data.fullName}`);
     const body = encodeURIComponent(
-`Hi Shaunak,
+`Hi WebCraft.dev,
 
 Here are my website project details from WebCraft.dev:
 
 • Full Name: ${data.fullName}
 • Business Name: ${data.businessName}
 • Email: ${data.email}
-• WhatsApp: ${data.whatsapp}
+• WhatsApp / Phone: ${data.whatsapp}
 • Project Type: ${data.projectType}
 • Budget: ${data.budget}
 • Target Timeline: ${data.timeline}
@@ -377,12 +383,12 @@ function initLegalModals() {
         modalContent.innerHTML = `
           <p style="margin-bottom:1rem;">Your privacy is respected at WebCraft.dev. Any information you submit through the project inquiry form (such as your name, email, or project description) is used solely for the purpose of communicating regarding your website project.</p>
           <p style="margin-bottom:1rem;">We do not sell, rent, or share your personal data with third-party advertising platforms.</p>
-          <p>For questions or requests to delete your inquiry data, contact Shaunak directly at the configured business email.</p>
+          <p>For questions or requests to delete your inquiry data, contact us directly at webbcraft.dev1@gmail.com.</p>
         `;
       } else {
         modalTitle.textContent = 'Terms & Conditions';
         modalContent.innerHTML = `
-          <p style="margin-bottom:1rem;">All web development services provided by WebCrafted (Shaunak Kompalwar) are governed by mutually agreed project proposals and milestone scopes.</p>
+          <p style="margin-bottom:1rem;">All web development services provided by WebCraft.dev (WebCrafted) are governed by mutually agreed project proposals and milestone scopes.</p>
           <p style="margin-bottom:1rem;">1. <strong>Project Scope:</strong> Defined deliverables, features, and target timelines will be agreed upon in writing prior to commencing development.</p>
           <p style="margin-bottom:1rem;">2. <strong>Intellectual Property:</strong> Upon final milestone payment, full ownership of the website codebase and custom assets will be transferred to the client.</p>
           <p>3. <strong>Third-Party Services:</strong> Domain registration, cloud hosting, and third-party API service fees are paid directly to the respective providers by the client.</p>
