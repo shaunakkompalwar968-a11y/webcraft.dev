@@ -578,6 +578,95 @@ button, input, select, textarea {
   color: #e2e8f0;
 }
 
+/* Hero Spirit Adventure Showcase Card */
+.hero-spirit-card {
+  padding: 1.6rem;
+  background: radial-gradient(circle at 85% 15%, rgba(56, 189, 248, 0.12), transparent 60%), #090e18;
+}
+
+.hero-spirit-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+.hero-spirit-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.hero-spirit-logo {
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  background: #0b1322;
+  border: 1px solid rgba(56, 189, 248, 0.3);
+  padding: 3px;
+  object-fit: contain;
+}
+
+.hero-spirit-name {
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: #f8fafc;
+  margin: 0;
+}
+
+.hero-spirit-subtitle {
+  font-size: 0.76rem;
+  color: #38bdf8;
+  font-family: var(--font-mono);
+  display: block;
+}
+
+.hero-spirit-live-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 0.2rem 0.65rem;
+  border-radius: var(--radius-full);
+  background: rgba(16, 185, 129, 0.12);
+  border: 1px solid rgba(16, 185, 129, 0.3);
+  color: #34d399;
+  font-size: 0.72rem;
+  font-weight: 700;
+  font-family: var(--font-mono);
+}
+
+.hero-spirit-text {
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  line-height: 1.65;
+  margin-bottom: 1.1rem;
+}
+
+.hero-spirit-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 1.3rem;
+}
+
+.spirit-chip {
+  font-size: 0.74rem;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: #cbd5e1;
+  padding: 0.2rem 0.55rem;
+  border-radius: 4px;
+}
+
+.hero-spirit-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
 .hero-scroll-indicator {
   position: absolute;
   bottom: 1.5rem;
@@ -769,18 +858,20 @@ button, input, select, textarea {
 }
 
 .device-desktop-header {
-  height: 36px;
+  min-height: 40px;
   background: #131b2e;
   border-bottom: 1px solid var(--border-subtle);
   display: flex;
   align-items: center;
-  padding: 0 1rem;
-  gap: 1rem;
+  justify-content: space-between;
+  padding: 0.35rem 1rem;
+  gap: 0.75rem;
 }
 
 .device-dots {
   display: flex;
   gap: 6px;
+  flex-shrink: 0;
 }
 
 .device-url-bar {
@@ -788,12 +879,57 @@ button, input, select, textarea {
   font-size: 0.75rem;
   color: #94a3b8;
   background: #090e18;
-  padding: 0.2rem 0.8rem;
+  padding: 0.25rem 0.8rem;
   border-radius: 4px;
-  width: 50%;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  max-width: 45%;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.device-controls {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-shrink: 0;
+}
+
+.device-mode-btn {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: #cbd5e1;
+  font-size: 0.72rem;
+  font-weight: 600;
+  padding: 3px 9px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  text-decoration: none;
+}
+
+.device-mode-btn:hover {
+  background: rgba(56, 189, 248, 0.15);
+  border-color: #38bdf8;
+  color: #ffffff;
+}
+
+.device-mode-btn.active {
+  background: #38bdf8;
+  color: #07090e;
+  border-color: #38bdf8;
+  font-weight: 700;
+}
+
+.device-mode-btn.icon-only {
+  padding: 3px 7px;
+  font-size: 0.8rem;
 }
 
 .device-media-box {
@@ -807,6 +943,237 @@ button, input, select, textarea {
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+
+/* Specific Live Media Box for Real Live Projects */
+.live-media-box {
+  aspect-ratio: auto;
+  height: 520px;
+  overflow: hidden;
+  position: relative;
+}
+
+.live-project-iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  display: block;
+  background: #080c14;
+}
+
+.live-frame-loader {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #090e18;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  z-index: 10;
+  transition: opacity 0.4s ease;
+}
+
+.loader-spinner {
+  width: 36px;
+  height: 36px;
+  border: 3px solid rgba(56, 189, 248, 0.15);
+  border-top-color: #38bdf8;
+  border-radius: 50%;
+  animation: spinLoader 0.9s linear infinite;
+}
+
+@keyframes spinLoader {
+  to { transform: rotate(360deg); }
+}
+
+.loader-text {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.loader-text strong {
+  font-size: 0.9rem;
+  color: #f1f5f9;
+}
+
+.loader-text span {
+  font-size: 0.78rem;
+  color: #64748b;
+  font-family: var(--font-mono);
+}
+
+.snapshot-fallback-view {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.snapshot-fallback-view img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.snapshot-overlay {
+  position: absolute;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  z-index: 5;
+}
+
+.device-footer-subbar {
+  padding: 0.6rem 1rem;
+  background: #0d1424;
+  border-top: 1px solid var(--border-subtle);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.76rem;
+  font-family: var(--font-mono);
+  color: var(--text-muted);
+}
+
+.live-pulse-indicator {
+  color: #34d399;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-weight: 600;
+}
+
+.subbar-hint {
+  color: #94a3b8;
+}
+
+.subbar-link {
+  color: #38bdf8;
+  text-decoration: underline;
+}
+
+.project-brand-avatar {
+  width: 52px;
+  height: 52px;
+  border-radius: 12px;
+  object-fit: contain;
+  background: #0b1322;
+  border: 1px solid rgba(56, 189, 248, 0.3);
+  padding: 4px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+}
+
+.project-header-row {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 0.8rem;
+}
+
+.live-deployment-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.25rem 0.75rem;
+  border-radius: 4px;
+  background: rgba(16, 185, 129, 0.1);
+  border: 1px solid rgba(16, 185, 129, 0.25);
+  font-size: 0.78rem;
+  font-family: var(--font-mono);
+  color: #34d399;
+  margin-bottom: 1.2rem;
+}
+
+.badge-status-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #10b981;
+  box-shadow: 0 0 8px #10b981;
+}
+
+.project-tours-highlight {
+  background: rgba(15, 23, 42, 0.6);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-sm);
+  padding: 0.85rem 1rem;
+  margin-bottom: 1.4rem;
+}
+
+.tours-label {
+  display: block;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-weight: 700;
+  color: #94a3b8;
+  margin-bottom: 0.5rem;
+}
+
+.tours-pills-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.tour-pill {
+  font-size: 0.78rem;
+  background: rgba(56, 189, 248, 0.08);
+  border: 1px solid rgba(56, 189, 248, 0.2);
+  color: #e2e8f0;
+  padding: 3px 8px;
+  border-radius: 4px;
+}
+
+.project-actions-group {
+  display: flex;
+  gap: 0.85rem;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.btn-whatsapp {
+  background: #25d366;
+  color: #052e16;
+  font-weight: 700;
+}
+
+.btn-whatsapp:hover {
+  background: #22c55e;
+  color: #022c22;
+  box-shadow: 0 0 20px rgba(37, 211, 102, 0.4);
+}
+
+.hero-featured-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 0.25rem 0.75rem;
+  border-radius: var(--radius-full);
+  background: rgba(56, 189, 248, 0.1);
+  border: 1px solid rgba(56, 189, 248, 0.3);
+  font-size: 0.76rem;
+  color: #38bdf8;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.hero-featured-tag:hover {
+  background: rgba(56, 189, 248, 0.2);
+  border-color: #38bdf8;
+  color: #ffffff;
+}
+
+.pulse-emerald {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #10b981;
+  box-shadow: 0 0 6px #10b981;
 }
 
 /* Info Side */
