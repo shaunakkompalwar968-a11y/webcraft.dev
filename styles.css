@@ -578,93 +578,51 @@ button, input, select, textarea {
   color: #e2e8f0;
 }
 
-/* Hero Spirit Adventure Showcase Card */
-.hero-spirit-card {
-  padding: 1.6rem;
-  background: radial-gradient(circle at 85% 15%, rgba(56, 189, 248, 0.12), transparent 60%), #090e18;
+/* Hero Spirit Adventure Homepage Screenshot Preview */
+.hero-screenshot-wrapper {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  background: #080c14;
+  overflow: hidden;
 }
 
-.hero-spirit-top {
+.hero-screenshot-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+  display: block;
+  transition: transform var(--transition-smooth);
+}
+
+.hero-screenshot-wrapper:hover .hero-screenshot-img {
+  transform: scale(1.02);
+}
+
+.hero-screenshot-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(to top, rgba(9, 14, 24, 0.95) 15%, rgba(9, 14, 24, 0.5) 60%, transparent 100%);
+  padding: 0.85rem 1.25rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 1rem;
+  gap: 10px;
   flex-wrap: wrap;
-  gap: 0.6rem;
+  z-index: 2;
 }
 
-.hero-spirit-brand {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
-
-.hero-spirit-logo {
-  width: 44px;
-  height: 44px;
-  border-radius: 10px;
-  background: #0b1322;
-  border: 1px solid rgba(56, 189, 248, 0.3);
-  padding: 3px;
-  object-fit: contain;
-}
-
-.hero-spirit-name {
-  font-size: 1.15rem;
-  font-weight: 800;
-  color: #f8fafc;
-  margin: 0;
-}
-
-.hero-spirit-subtitle {
-  font-size: 0.76rem;
-  color: #38bdf8;
+.hero-screenshot-badge {
   font-family: var(--font-mono);
-  display: block;
-}
-
-.hero-spirit-live-tag {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  padding: 0.2rem 0.65rem;
-  border-radius: var(--radius-full);
-  background: rgba(16, 185, 129, 0.12);
-  border: 1px solid rgba(16, 185, 129, 0.3);
-  color: #34d399;
-  font-size: 0.72rem;
+  font-size: 0.78rem;
   font-weight: 700;
-  font-family: var(--font-mono);
-}
-
-.hero-spirit-text {
-  font-size: 0.88rem;
-  color: var(--text-muted);
-  line-height: 1.65;
-  margin-bottom: 1.1rem;
-}
-
-.hero-spirit-chips {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 6px;
-  margin-bottom: 1.3rem;
-}
-
-.spirit-chip {
-  font-size: 0.74rem;
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  color: #cbd5e1;
-  padding: 0.2rem 0.55rem;
-  border-radius: 4px;
-}
-
-.hero-spirit-actions {
+  color: #34d399;
   display: flex;
   align-items: center;
-  gap: 0.75rem;
-  flex-wrap: wrap;
+  gap: 6px;
 }
 
 .hero-scroll-indicator {
@@ -945,115 +903,18 @@ button, input, select, textarea {
   object-fit: cover;
 }
 
-/* Specific Live Media Box for Real Live Projects */
-.live-media-box {
-  aspect-ratio: auto;
-  height: 520px;
-  overflow: hidden;
-  position: relative;
-}
-
-.live-project-iframe {
-  width: 100%;
-  height: 100%;
-  border: none;
-  display: block;
-  background: #080c14;
-}
-
-.live-frame-loader {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: #090e18;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 1rem;
-  z-index: 10;
-  transition: opacity 0.4s ease;
-}
-
-.loader-spinner {
-  width: 36px;
-  height: 36px;
-  border: 3px solid rgba(56, 189, 248, 0.15);
-  border-top-color: #38bdf8;
-  border-radius: 50%;
-  animation: spinLoader 0.9s linear infinite;
-}
-
-@keyframes spinLoader {
-  to { transform: rotate(360deg); }
-}
-
-.loader-text {
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-}
-
-.loader-text strong {
-  font-size: 0.9rem;
-  color: #f1f5f9;
-}
-
-.loader-text span {
-  font-size: 0.78rem;
-  color: #64748b;
-  font-family: var(--font-mono);
-}
-
-.snapshot-fallback-view {
-  position: relative;
-  width: 100%;
-  height: 100%;
-}
-
-.snapshot-fallback-view img {
+/* Project Screenshot Image */
+.project-screenshot-img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: top;
+  display: block;
+  transition: transform var(--transition-smooth);
 }
 
-.snapshot-overlay {
-  position: absolute;
-  bottom: 1.5rem;
-  right: 1.5rem;
-  z-index: 5;
-}
-
-.device-footer-subbar {
-  padding: 0.6rem 1rem;
-  background: #0d1424;
-  border-top: 1px solid var(--border-subtle);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  font-size: 0.76rem;
-  font-family: var(--font-mono);
-  color: var(--text-muted);
-}
-
-.live-pulse-indicator {
-  color: #34d399;
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  font-weight: 600;
-}
-
-.subbar-hint {
-  color: #94a3b8;
-}
-
-.subbar-link {
-  color: #38bdf8;
-  text-decoration: underline;
+.device-frame-desktop:hover .project-screenshot-img {
+  transform: scale(1.015);
 }
 
 .project-brand-avatar {
@@ -1819,6 +1680,10 @@ button, input, select, textarea {
 
   .nav-mobile-toggle {
     display: block;
+  }
+
+  .device-url-bar {
+    display: none;
   }
 
   .form-row {

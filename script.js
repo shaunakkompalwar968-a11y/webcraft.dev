@@ -116,6 +116,9 @@ function initNavbar() {
 function initHeroCodeSandbox() {
   const tabs = document.querySelectorAll('.browser-tab-btn');
   const codeBox = document.getElementById('heroCodeContent');
+  const codeArea = document.getElementById('heroCodeArea');
+  const previewView = document.getElementById('heroSpiritPreviewView');
+  const urlDisplay = document.getElementById('heroUrlDisplay');
 
   const snippets = {
     'page.tsx': `<span style="color:#64748b;">// Clean, Component-Based Architecture</span>
@@ -139,16 +142,16 @@ function initHeroCodeSandbox() {
   <span style="color:#818cf8;">const</span> body = <span style="color:#818cf8;">await</span> req.json();
   <span style="color:#818cf8;">const</span> cleanData = <span style="color:#fcd34d;">sanitizeInput</span>(body);
 
-  <span style="color:#64748b;">// Deliver instant email notification</span>
+  <span style="color:#64748b;">// Deliver instant email & WhatsApp notification</span>
   <span style="color:#818cf8;">await</span> <span style="color:#fcd34d;">sendInquiryEmail</span>(cleanData);
   <span style="color:#818cf8;">return</span> NextResponse.<span style="color:#fcd34d;">json</span>({ success: <span style="color:#34d399;">true</span> });
 }`,
     'config.json': `{
   <span style="color:#38bdf8;">"brand"</span>: <span style="color:#a7f3d0;">"WebCraft.dev"</span>,
-  <span style="color:#38bdf8;">"location"</span>: <span style="color:#a7f3d0;">"Hyderabad, India"</span>,
+  <span style="color:#38bdf8;">"liveProject"</span>: <span style="color:#a7f3d0;">"Spirit Adventure (https://spirit-adventure.onrender.com)"</span>,
   <span style="color:#38bdf8;">"contact"</span>: <span style="color:#a7f3d0;">"webbcraft.dev1@gmail.com"</span>,
-  <span style="color:#38bdf8;">"phone"</span>: <span style="color:#a7f3d0;">"+91 7794835164"</span>,
-  <span style="color:#38bdf8;">"status"</span>: <span style="color:#34d399;">"Available for new projects"</span>
+  <span style="color:#38bdf8;">"whatsapp"</span>: <span style="color:#a7f3d0;">"+91 7794835164"</span>,
+  <span style="color:#38bdf8;">"status"</span>: <span style="color:#34d399;">"Available for new client projects"</span>
 }`
   };
 
@@ -159,11 +162,20 @@ function initHeroCodeSandbox() {
         t.style.color = '#94a3b8';
       });
       tab.style.background = '#151d30';
-      tab.style.color = '#e2e8f0';
+      tab.style.color = '#38bdf8';
 
       const file = tab.dataset.file;
-      if (snippets[file] && codeBox) {
-        codeBox.innerHTML = snippets[file];
+      if (file === 'spirit-preview') {
+        if (previewView) previewView.style.display = 'block';
+        if (codeArea) codeArea.style.display = 'none';
+        if (urlDisplay) urlDisplay.textContent = 'https://spirit-adventure.onrender.com';
+      } else {
+        if (previewView) previewView.style.display = 'none';
+        if (codeArea) codeArea.style.display = 'block';
+        if (snippets[file] && codeBox) {
+          codeBox.innerHTML = snippets[file];
+        }
+        if (urlDisplay) urlDisplay.textContent = `src/components/${file}`;
       }
     });
   });

@@ -14,11 +14,11 @@
   <meta property="og:url" content="https://webcraft.dev/">
   <meta property="og:title" content="WebCraft.dev | Modern Full Stack Web Development">
   <meta property="og:description" content="Websites That Turn Your Ideas Into Business. High-performance, modern websites designed to help businesses build credibility and grow.">
-  <meta property="og:image" content="assets/spirit-adventure-preview.svg">
+  <meta property="og:image" content="assets/spirit-adventure-home.png">
 
   <!-- Favicon -->
-  <link rel="icon" type="image/png" href="assets/Logohead.png">
-  <link rel="alternate icon" type="image/svg+xml" href="assets/logo.svg">
+  <link rel="icon" type="image/png" href="Assests/Logo.png">
+  <link rel="alternate icon" type="image/svg+xml" href="Assests/Logo.png">
   
   <!-- Google Fonts: Inter & JetBrains Mono -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -45,7 +45,7 @@
         
         <!-- Left: Logo / Typographic Wordmark -->
         <a href="#home" class="brand-logo" aria-label="WebCraft.dev Home">
-          <img src="assets/Logohead.png" alt="WebCrafted logo" class="brand-icon" onerror="this.onerror=null; this.src='assets/logo.svg';">
+          <img src="Assests/Logo.png" alt="WebCrafted logo" class="brand-icon" onerror="this.onerror=null; this.src='assets/logo.svg';">
           <span>WebCraft<span class="gradient-text">.dev</span></span>
         </a>
 
@@ -93,8 +93,14 @@
           <span class="availability-text">Available for new projects</span>
         </div>
 
-        <!-- Introductory Label -->
-        <span class="hero-intro-label">INDEPENDENT WEB DEVELOPER</span>
+        <!-- Introductory Label & Featured Live Tag -->
+        <div style="display: flex; align-items: center; gap: 0.8rem; flex-wrap: wrap; margin-bottom: 0.8rem;">
+          <span class="hero-intro-label" style="margin-bottom: 0;">INDEPENDENT WEB DEVELOPER</span>
+          <a href="#projects" class="hero-featured-tag">
+            <span class="pulse-emerald"></span>
+            <span>Live Project: <strong>Spirit Adventure</strong> ↗</span>
+          </a>
+        </div>
 
         <!-- Main Headline -->
         <h1 class="hero-title">
@@ -139,33 +145,36 @@
           </div>
           <div class="browser-url-input">
             <span>🔒</span>
-            <span>https://spirit-adventure.onrender.com</span>
+            <span id="heroUrlDisplay">https://spirit-adventure.onrender.com</span>
           </div>
-          <div style="display: flex; gap: 4px;">
-            <button class="browser-tab-btn" data-file="page.tsx" style="background:#151d30; color:#e2e8f0; border:none; padding:2px 8px; border-radius:4px; font-size:11px; cursor:pointer;">page.tsx</button>
-            <button class="browser-tab-btn" data-file="api.ts" style="background:transparent; color:#94a3b8; border:none; padding:2px 8px; border-radius:4px; font-size:11px; cursor:pointer;">api.ts</button>
-            <button class="browser-tab-btn" data-file="config.json" style="background:transparent; color:#94a3b8; border:none; padding:2px 8px; border-radius:4px; font-size:11px; cursor:pointer;">config.json</button>
+          <div style="display: flex; gap: 4px; flex-wrap: wrap;">
+            <button class="browser-tab-btn active" data-file="spirit-preview" style="background:#151d30; color:#38bdf8; border:none; padding:3px 9px; border-radius:4px; font-size:11px; cursor:pointer; font-weight:700;">📸 Homepage</button>
+            <button class="browser-tab-btn" data-file="page.tsx" style="background:transparent; color:#94a3b8; border:none; padding:3px 9px; border-radius:4px; font-size:11px; cursor:pointer;">page.tsx</button>
+            <button class="browser-tab-btn" data-file="api.ts" style="background:transparent; color:#94a3b8; border:none; padding:3px 9px; border-radius:4px; font-size:11px; cursor:pointer;">api.ts</button>
+            <button class="browser-tab-btn" data-file="config.json" style="background:transparent; color:#94a3b8; border:none; padding:3px 9px; border-radius:4px; font-size:11px; cursor:pointer;">config.json</button>
           </div>
         </div>
 
-        <div class="browser-content-area">
-          <pre style="margin:0; overflow-x:auto;"><code id="heroCodeContent"><span style="color:#64748b;">// Clean, Component-Based Architecture</span>
-<span style="color:#38bdf8;">import</span> { TourPackageCard } <span style="color:#38bdf8;">from</span> <span style="color:#a7f3d0;">'@/components/tours'</span>;
-<span style="color:#38bdf8;">import</span> { WhatsAppEnquiry } <span style="color:#38bdf8;">from</span> <span style="color:#a7f3d0;">'@/components/contact'</span>;
+        <!-- Spirit Adventure Homepage Screenshot (Active View by Default) -->
+        <div id="heroSpiritPreviewView" class="hero-screenshot-wrapper">
+          <img src="assets/spirit-adventure-home.png" alt="Spirit Adventure Website Homepage Screenshot" class="hero-screenshot-img" loading="eager">
+          <div class="hero-screenshot-overlay">
+            <div class="hero-screenshot-badge">
+              <span class="pulse-emerald"></span> Production Website: Spirit Adventure
+            </div>
+            <a href="https://spirit-adventure.onrender.com/" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm" style="font-size: 0.75rem; padding: 0.35rem 0.8rem;">
+              Visit Live Site ↗
+            </a>
+          </div>
+        </div>
 
-<span style="color:#818cf8;">export default function</span> <span style="color:#fcd34d;">AdventureWebsite</span>() {
-  <span style="color:#818cf8;">return</span> (
-    &lt;<span style="color:#38bdf8;">main</span> <span style="color:#94a3b8;">className</span>=<span style="color:#a7f3d0;">"min-h-screen bg-slate-950"</span>&gt;
-      &lt;<span style="color:#fcd34d;">HeroBanner</span> headline=<span style="color:#a7f3d0;">"Explore Untamed Trails"</span> /&gt;
-      &lt;<span style="color:#fcd34d;">TourPackageCard</span> location=<span style="color:#a7f3d0;">"Himalayas"</span> /&gt;
-      &lt;<span style="color:#fcd34d;">WhatsAppEnquiry</span> instantReply={<span style="color:#34d399;">true</span>} /&gt;
-    &lt;/<span style="color:#38bdf8;">main</span>&gt;
-  );
-}</code></pre>
+        <!-- Code Content Area (Visible when code tabs are clicked) -->
+        <div class="browser-content-area" id="heroCodeArea" style="display: none;">
+          <pre style="margin:0; overflow-x:auto;"><code id="heroCodeContent"></code></pre>
         </div>
 
         <div style="padding:0.75rem 1.25rem; background:#0d1424; border-top:1px solid var(--border-subtle); display:flex; justify-content:space-between; align-items:center; font-size:0.78rem; font-family:var(--font-mono); color:var(--text-muted);">
-          <span>Frontend &amp; Full Stack Architecture</span>
+          <span>Production Travel Stack • Next.js &amp; Render</span>
           <span style="color:#34d399;">● Tested &amp; Responsive</span>
         </div>
       </div>
@@ -375,9 +384,9 @@
 
       <div class="projects-editorial-list">
         
-        <!-- Project 1: Spirit Adventure (REAL PROJECT) -->
-        <article class="project-showcase-item">
-          <!-- Desktop Mockup Frame -->
+        <!-- Project 1: Spirit Adventure (REAL LIVE PRODUCTION PROJECT) -->
+        <article class="project-showcase-item project-featured-hero" id="spiritAdventureShowcase">
+          <!-- Desktop Mockup Frame with Homepage Screenshot -->
           <div class="project-preview-side">
             <div class="device-frame-desktop">
               <div class="device-desktop-header">
@@ -386,41 +395,76 @@
                   <div class="browser-dot yellow"></div>
                   <div class="browser-dot green"></div>
                 </div>
-                <div class="device-url-bar">https://spirit-adventure.onrender.com</div>
+                <div class="device-url-bar">
+                  <span>🔒</span>
+                  <span>https://spirit-adventure.onrender.com</span>
+                </div>
+                <a href="https://spirit-adventure.onrender.com/" target="_blank" rel="noopener noreferrer" class="device-mode-btn" title="Open live website in new tab">
+                  <span>Visit Live Site ↗</span>
+                </a>
               </div>
+
+              <!-- Media Box with Website Homepage Screenshot -->
               <div class="device-media-box">
-                <img src="assets/spirit-adventure-preview.svg" alt="Spirit Adventure Travel Website Preview" loading="lazy">
+                <img src="assets/spirit-adventure-home.png" alt="Spirit Adventure Website Homepage Screenshot" loading="lazy" class="project-screenshot-img">
               </div>
             </div>
           </div>
 
           <!-- Project Info -->
           <div class="project-info-side">
-            <span class="project-category-tag">Travel &amp; Tourism Website</span>
-            <h3 class="project-title">Spirit Adventure</h3>
+            <div class="project-header-row">
+              <img src="Assests/Logo.png" alt="Spirit Adventure Logo" class="project-brand-avatar">
+              <div>
+                <span class="project-category-tag">Featured Live Project • Travel &amp; Tourism</span>
+                <h3 class="project-title">Spirit Adventure</h3>
+              </div>
+            </div>
+
+            <div class="live-deployment-badge">
+              <span class="badge-status-dot"></span>
+              <span>Live Deployed on Render Cloud • High Performance Next.js</span>
+            </div>
+
             <p class="project-description">
-              A modern travel and adventure website designed to showcase tour packages, highlight destinations, and help visitors enquire about their next adventure.
+              A comprehensive travel, trekking, and adventure booking platform built for travelers seeking curated expeditions across South and North India. Engineered for high conversions with instant WhatsApp inquiry routing, detailed itinerary breakdowns, and multi-city departure points.
             </p>
 
+            <div class="project-tours-highlight">
+              <span class="tours-label">Featured Verified Expeditions:</span>
+              <div class="tours-pills-grid">
+                <span class="tour-pill">🏔️ Wayanad 3D2N (Chembra Peak)</span>
+                <span class="tour-pill">🌊 Gokarna &amp; Dandeli Rafting</span>
+                <span class="tour-pill">❄️ Manali Snow Valley &amp; Solang</span>
+                <span class="tour-pill">🌿 Meghalaya Living Root Bridges</span>
+                <span class="tour-pill">⛵ Kerala Backwaters Houseboat</span>
+              </div>
+            </div>
+
             <ul class="project-highlights-list">
-              <li>Tour package presentation &amp; pricing itineraries</li>
-              <li>Responsive layouts across desktop, tablet, and mobile</li>
-              <li>Booking and enquiry functionality</li>
-              <li>Direct WhatsApp integration for quick traveler support</li>
-              <li>Destination information &amp; curated visual galleries</li>
+              <li><strong>Multi-City Departure Hubs:</strong> Centralized trip pick-ups for Hyderabad, Bangalore, and Chennai.</li>
+              <li><strong>Direct WhatsApp Booking:</strong> Streamlined inquiry flow converting travelers straight into WhatsApp chats.</li>
+              <li><strong>Interactive Itineraries:</strong> Day-wise schedules, inclusion/exclusion breakdowns, and transparent pricing.</li>
+              <li><strong>Mobile-First Performance:</strong> Fully responsive Next.js frontend with sub-second page transitions.</li>
             </ul>
 
             <div class="project-tech-tags">
+              <span class="tech-tag">Next.js</span>
               <span class="tech-tag">React</span>
               <span class="tech-tag">Tailwind CSS</span>
-              <span class="tech-tag">Node.js</span>
-              <span class="tech-tag">Render</span>
+              <span class="tech-tag">WhatsApp API</span>
+              <span class="tech-tag">Cloudflare</span>
+              <span class="tech-tag">Render Cloud</span>
             </div>
 
-            <div style="display: flex; gap: 1rem; align-items: center; flex-wrap: wrap;">
+            <div class="project-actions-group">
               <a href="https://spirit-adventure.onrender.com/" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">
-                <span>View Live Website</span>
+                <span>Open Live Website</span>
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+              </a>
+              <a href="https://wa.me/917794835164?text=Hi%20WebCraft.dev,%20I%20saw%20your%20Spirit%20Adventure%20project%20and%20would%20like%20to%20build%20a%20similar%20travel%20or%20booking%20website!" target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp btn-sm">
+                <span>Chat on WhatsApp</span>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2z"/></svg>
               </a>
               <a href="#contact" class="btn btn-secondary btn-sm">Inquire Similar Project</a>
             </div>
@@ -539,7 +583,7 @@
         <!-- Portrait / Brand Card -->
         <div class="glass-card about-portrait-card">
           <div class="portrait-avatar-box">
-            <img src="assets/Logohead.png" alt="WebCraft.dev" class="portrait-img" onerror="this.onerror=null; this.src='assets/logo.svg';">
+            <img src="Assests/Logo.png" alt="WebCraft.dev" class="portrait-img" onerror="this.onerror=null; this.src='assets/logo.svg';">
           </div>
           <h3 class="about-author-name">WebCraft<span class="gradient-text">.dev</span></h3>
           <p class="about-author-role">Freelance Full Stack Web Development</p>
@@ -1052,7 +1096,7 @@
         
         <div>
           <a href="#home" class="brand-logo" style="margin-bottom: 0.5rem;">
-            <img src="assets/Logohead.png" alt="WebCrafted logo" class="brand-icon" onerror="this.onerror=null; this.src='assets/logo.svg';">
+            <img src="Assests/Logo.png" alt="WebCrafted logo" class="brand-icon" onerror="this.onerror=null; this.src='assets/logo.svg';">
             <span>WebCraft<span class="gradient-text">.dev</span></span>
           </a>
           <p class="footer-bio">

@@ -12,6 +12,7 @@ window.WEBCRAFT_CONFIG = {
   profession: "Freelance Full Stack Web Development",
   location: "Hyderabad, India",
   availabilityStatus: "Available for new projects",
+  liveProjectUrl: "https://spirit-adventure.onrender.com/",
 
   // Phone & WhatsApp Configuration
   phoneNumber: "+91 7794835164",
