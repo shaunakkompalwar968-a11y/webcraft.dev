@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 600" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bizBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f172a"/>
+      <stop offset="60%" stop-color="#1e293b"/>
+      <stop offset="100%" stop-color="#0b1220"/>
+    </linearGradient>
+    <linearGradient id="bizAccent" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#3b82f6"/>
+      <stop offset="100%" stop-color="#60a5fa"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="960" height="600" fill="url(#bizBg)"/>
+  
+  <!-- Subtle Grid -->
+  <g stroke="#ffffff" stroke-opacity="0.04" stroke-width="1">
+    <path d="M0 60 H960 M0 120 H960 M0 180 H960 M0 240 H960 M0 300 H960 M0 360 H960 M0 420 H960 M0 480 H960 M0 540 H960" />
+    <path d="M120 0 V600 M240 0 V600 M360 0 V600 M480 0 V600 M600 0 V600 M720 0 V600 M840 0 V600" />
+  </g>
+
+  <!-- Navbar -->
+  <rect x="40" y="30" width="880" height="54" rx="10" fill="#1e293b" fill-opacity="0.6" stroke="#475569" stroke-opacity="0.4"/>
+  <rect x="65" y="45" width="24" height="24" rx="6" fill="url(#bizAccent)"/>
+  <text x="100" y="62" fill="#f8fafc" font-family="system-ui, sans-serif" font-size="16" font-weight="bold">Acme Consulting Group</text>
+  <text x="580" y="62" fill="#cbd5e1" font-family="system-ui, sans-serif" font-size="13">Solutions</text>
+  <text x="670" y="62" fill="#cbd5e1" font-family="system-ui, sans-serif" font-size="13">Case Studies</text>
+  <text x="770" y="62" fill="#cbd5e1" font-family="system-ui, sans-serif" font-size="13">Company</text>
+  <rect x="840" y="42" width="70" height="30" rx="6" fill="#3b82f6"/>
+  <text x="875" y="61" fill="#ffffff" font-family="system-ui, sans-serif" font-size="11" font-weight="bold" text-anchor="middle">Contact</text>
+
+  <!-- Hero Content -->
+  <rect x="80" y="130" width="180" height="26" rx="13" fill="#3b82f6" fill-opacity="0.15" stroke="#3b82f6" stroke-opacity="0.4"/>
+  <text x="170" y="147" fill="#60a5fa" font-family="system-ui, sans-serif" font-size="11" font-weight="600" text-anchor="middle">BUSINESS DIGITALIZATION</text>
+
+  <text x="80" y="210" fill="#ffffff" font-family="system-ui, sans-serif" font-size="36" font-weight="800">Next-Generation Strategy</text>
+  <text x="80" y="255" fill="#ffffff" font-family="system-ui, sans-serif" font-size="36" font-weight="800">for Modern Enterprises</text>
+  
+  <text x="80" y="295" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="15">Empowering established organizations with scalable digital solutions, automated workflows, and customer portals.</text>
+
+  <rect x="80" y="325" width="160" height="42" rx="8" fill="url(#bizAccent)"/>
+  <text x="160" y="351" fill="#ffffff" font-family="system-ui, sans-serif" font-size="13" font-weight="bold" text-anchor="middle">Request Consultation</text>
+
+  <!-- Feature Grid in bottom half -->
+  <rect x="80" y="410" width="250" height="150" rx="12" fill="#1e293b" fill-opacity="0.7" stroke="#334155"/>
+  <circle cx="115" cy="445" r="16" fill="#2563eb" fill-opacity="0.2"/>
+  <text x="115" y="451" fill="#60a5fa" font-family="system-ui, sans-serif" font-size="16" text-anchor="middle">📊</text>
+  <text x="80" y="490" fill="#f8fafc" font-family="system-ui, sans-serif" font-size="15" font-weight="bold" dx="35">Strategic Growth</text>
+  <text x="80" y="520" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="12" dx="35">Data-informed consulting models.</text>
+
+  <rect x="355" y="410" width="250" height="150" rx="12" fill="#1e293b" fill-opacity="0.7" stroke="#334155"/>
+  <circle cx="390" cy="445" r="16" fill="#2563eb" fill-opacity="0.2"/>
+  <text x="390" y="451" fill="#60a5fa" font-family="system-ui, sans-serif" font-size="16" text-anchor="middle">🔒</text>
+  <text x="355" y="490" fill="#f8fafc" font-family="system-ui, sans-serif" font-size="15" font-weight="bold" dx="35">Secure Cloud Ops</text>
+  <text x="355" y="520" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="12" dx="35">Enterprise-grade compliance.</text>
+
+  <rect x="630" y="410" width="250" height="150" rx="12" fill="#1e293b" fill-opacity="0.7" stroke="#334155"/>
+  <circle cx="665" cy="445" r="16" fill="#2563eb" fill-opacity="0.2"/>
+  <text x="665" y="451" fill="#60a5fa" font-family="system-ui, sans-serif" font-size="16" text-anchor="middle">⚙️</text>
+  <text x="630" y="490" fill="#f8fafc" font-family="system-ui, sans-serif" font-size="15" font-weight="bold" dx="35">Process Automation</text>
+  <text x="630" y="520" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="12" dx="35">Reducing operational friction.</text>
+
+  <!-- Right side decorative illustration -->
+  <rect x="580" y="130" width="300" height="230" rx="12" fill="#152033" stroke="#2563eb" stroke-opacity="0.3"/>
+  <rect x="605" y="155" width="250" height="40" rx="8" fill="#1e293b"/>
+  <circle cx="625" cy="175" r="8" fill="#22c55e"/>
+  <text x="645" y="180" fill="#e2e8f0" font-family="system-ui, sans-serif" font-size="12">Client Satisfaction Focus</text>
+  <rect x="605" y="210" width="250" height="120" rx="8" fill="#1e293b"/>
+  <text x="625" y="240" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="12">Key Business Metrics</text>
+  <rect x="625" y="255" width="210" height="8" rx="4" fill="#334155"/>
+  <rect x="625" y="255" width="145" height="8" rx="4" fill="#3b82f6"/>
+  <rect x="625" y="275" width="210" height="8" rx="4" fill="#334155"/>
+  <rect x="625" y="275" width="180" height="8" rx="4" fill="#38bdf8"/>
+  <text x="625" y="310" fill="#22c55e" font-family="system-ui, sans-serif" font-size="11">✓ Structured Deliverables</text>
+</svg>

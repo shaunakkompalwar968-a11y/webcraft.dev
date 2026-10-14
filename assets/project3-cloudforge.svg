@@ -1,0 +1,89 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgGrad3" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#022c22"/>
+      <stop offset="40%" stop-color="#064e3b"/>
+      <stop offset="100%" stop-color="#021c16"/>
+    </linearGradient>
+    <linearGradient id="neonEmerald" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#10b981"/>
+      <stop offset="100%" stop-color="#34d399"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="500" rx="16" fill="url(#bgGrad3)"/>
+
+  <!-- Window Header -->
+  <rect x="0" y="0" width="800" height="42" rx="16" fill="#04231b" fill-opacity="0.95"/>
+  <circle cx="28" cy="21" r="6" fill="#ef4444"/>
+  <circle cx="48" cy="21" r="6" fill="#f59e0b"/>
+  <circle cx="68" cy="21" r="6" fill="#10b981"/>
+  <rect x="250" y="10" width="300" height="22" rx="6" fill="#064e3b" fill-opacity="0.6"/>
+  <text x="400" y="25" fill="#a7f3d0" font-family="monospace" font-size="11" text-anchor="middle">console.cloudforge.internal:8080/k8s</text>
+
+  <!-- Topology Node Network View -->
+  <rect x="24" y="60" width="480" height="415" rx="12" fill="#031f18" stroke="#059669" stroke-opacity="0.3"/>
+  <text x="44" y="90" fill="#ecfdf5" font-family="system-ui, sans-serif" font-size="14" font-weight="bold">Cluster Topology & Traffic Mesh</text>
+  <text x="44" y="108" fill="#6ee7b7" font-family="system-ui, sans-serif" font-size="11">Active Region: us-east-1 • 6 Nodes • 48 Pods Healthy</text>
+
+  <!-- Network Nodes Lines -->
+  <line x1="120" y1="200" x2="260" y2="150" stroke="#10b981" stroke-width="2" stroke-dasharray="4,4"/>
+  <line x1="260" y1="150" x2="400" y2="190" stroke="#10b981" stroke-width="2"/>
+  <line x1="120" y1="200" x2="200" y2="330" stroke="#10b981" stroke-width="2"/>
+  <line x1="200" y1="330" x2="350" y2="340" stroke="#10b981" stroke-width="2" stroke-dasharray="4,4"/>
+  <line x1="400" y1="190" x2="350" y2="340" stroke="#10b981" stroke-width="2"/>
+
+  <!-- Center Gateway Node -->
+  <circle cx="260" cy="150" r="32" fill="#065f46" stroke="#34d399" stroke-width="2.5"/>
+  <text x="260" y="154" fill="#ffffff" font-family="monospace" font-size="10" font-weight="bold" text-anchor="middle">INGRESS</text>
+
+  <!-- Service Node 1 -->
+  <circle cx="120" cy="200" r="26" fill="#064e3b" stroke="#10b981" stroke-width="2"/>
+  <text x="120" y="204" fill="#ecfdf5" font-family="monospace" font-size="9" text-anchor="middle">AUTH-SVC</text>
+
+  <!-- Service Node 2 -->
+  <circle cx="400" cy="190" r="28" fill="#064e3b" stroke="#10b981" stroke-width="2"/>
+  <text x="400" y="194" fill="#ecfdf5" font-family="monospace" font-size="9" text-anchor="middle">API-CORE</text>
+
+  <!-- Database Node 3 -->
+  <circle cx="200" cy="330" r="25" fill="#064e3b" stroke="#34d399" stroke-width="2"/>
+  <text x="200" y="334" fill="#ecfdf5" font-family="monospace" font-size="9" text-anchor="middle">PG-POOL</text>
+
+  <!-- Cache Node 4 -->
+  <circle cx="350" cy="340" r="25" fill="#064e3b" stroke="#34d399" stroke-width="2"/>
+  <text x="350" y="344" fill="#ecfdf5" font-family="monospace" font-size="9" text-anchor="middle">REDIS</text>
+
+  <rect x="44" y="400" width="440" height="55" rx="8" fill="#022019" stroke="#047857" stroke-opacity="0.3"/>
+  <text x="60" y="425" fill="#a7f3d0" font-family="monospace" font-size="11">> deploy: canary rollout 100% complete [SHA: 4fa91b]</text>
+  <text x="60" y="443" fill="#34d399" font-family="monospace" font-size="11">> status: Zero downtime migration executed in 1.4s</text>
+
+  <!-- Right Performance Metrics -->
+  <rect x="520" y="60" width="256" height="415" rx="12" fill="#031f18" stroke="#059669" stroke-opacity="0.3"/>
+  <text x="540" y="90" fill="#ecfdf5" font-family="system-ui, sans-serif" font-size="14" font-weight="bold">System Health</text>
+
+  <!-- CPU Gauge -->
+  <rect x="540" y="112" width="216" height="65" rx="8" fill="#02231b"/>
+  <text x="552" y="132" fill="#a7f3d0" font-family="system-ui, sans-serif" font-size="11">CPU Utilization</text>
+  <text x="740" y="132" fill="#34d399" font-family="system-ui, sans-serif" font-size="11" text-anchor="end">28.4%</text>
+  <rect x="552" y="145" width="192" height="8" rx="4" fill="#064e3b"/>
+  <rect x="552" y="145" width="55" height="8" rx="4" fill="#10b981"/>
+
+  <!-- RAM Gauge -->
+  <rect x="540" y="190" width="216" height="65" rx="8" fill="#02231b"/>
+  <text x="552" y="210" fill="#a7f3d0" font-family="system-ui, sans-serif" font-size="11">Memory Allocation</text>
+  <text x="740" y="210" fill="#34d399" font-family="system-ui, sans-serif" font-size="11" text-anchor="end">4.2 GB / 16 GB</text>
+  <rect x="552" y="223" width="192" height="8" rx="4" fill="#064e3b"/>
+  <rect x="552" y="223" width="70" height="8" rx="4" fill="#10b981"/>
+
+  <!-- Uptime Card -->
+  <rect x="540" y="268" width="216" height="90" rx="8" fill="#02231b"/>
+  <text x="552" y="292" fill="#a7f3d0" font-family="system-ui, sans-serif" font-size="11">Annual SLA Uptime</text>
+  <text x="552" y="325" fill="#ffffff" font-family="system-ui, sans-serif" font-size="24" font-weight="bold">99.995%</text>
+  <text x="552" y="345" fill="#34d399" font-family="system-ui, sans-serif" font-size="11">0 Unplanned Outages</text>
+
+  <!-- Quick Action -->
+  <rect x="540" y="375" width="216" height="80" rx="8" fill="url(#neonEmerald)"/>
+  <text x="648" y="410" fill="#022c22" font-family="system-ui, sans-serif" font-size="13" font-weight="bold" text-anchor="middle">Auto-Scale Triggered</text>
+  <text x="648" y="430" fill="#064e3b" font-family="system-ui, sans-serif" font-size="11" text-anchor="middle">Balanced across multi-AZ</text>
+</svg>

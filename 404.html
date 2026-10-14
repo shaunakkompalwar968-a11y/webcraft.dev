@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Page Not Found | WebCraft.dev</title>
+  <link rel="icon" type="image/png" href="assets/Logohead.png">
+  <link rel="alternate icon" type="image/svg+xml" href="assets/logo.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .not-found-wrapper {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 2rem;
+    }
+    .not-found-code {
+      font-size: clamp(4rem, 12vw, 8rem);
+      font-weight: 900;
+      font-family: var(--font-mono);
+      line-height: 1;
+      margin-bottom: 1rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="ambient-glow ambient-glow-1"></div>
+  <div class="bg-grid-overlay"></div>
+
+  <div class="not-found-wrapper container">
+    <div class="section-tag">404 Error</div>
+    <h1 class="not-found-code gradient-text">404</h1>
+    <h2 class="section-title" style="margin-bottom: 1rem;">Page Not Found</h2>
+    <p class="section-desc" style="max-width: 500px; margin-bottom: 2rem;">
+      The page you are looking for doesn't exist or has been moved. Let's get you back on track.
+    </p>
+    <a href="index.html" class="btn btn-primary">
+      <span>Return to Homepage</span>
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+    </a>
+  </div>
+</body>
+</html>
