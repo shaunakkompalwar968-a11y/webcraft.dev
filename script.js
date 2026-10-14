@@ -271,59 +271,67 @@ function initInquiryForm() {
 
     const submitBtn = form.querySelector('button[type="submit"]');
     const originalBtnText = submitBtn.innerHTML;
-    submitBtn.innerHTML = 'Sending Inquiry...';
+    submitBtn.innerHTML = '<span>Redirecting to WhatsApp...</span>';
     submitBtn.disabled = true;
 
     const config = window.WEBCRAFT_CONFIG || {};
+    const rawPhone = config.whatsappNumber || '917794835164';
+    const cleanPhone = rawPhone.replace(/[^0-9]/g, '');
+
+    // Construct structured WhatsApp Message
+    const whatsappMessage = 
+`*New Project Inquiry - WebCraft.dev*
+━━━━━━━━━━━━━━━━━━━━
+👤 *Full Name:* ${fullName}
+🏢 *Business Name:* ${businessName || 'Not specified'}
+📧 *Email Address:* ${email}
+📱 *Phone / WhatsApp:* ${whatsapp || 'Not provided'}
+📌 *Project Type:* ${projectType}
+💰 *Estimated Budget:* ${budget}
+⏱️ *Preferred Timeline:* ${timeline}
+
+📝 *Project Description & Goals:*
+${description}
+━━━━━━━━━━━━━━━━━━━━
+_Sent via WebCraft.dev Inquiry Form_`;
+
+    const whatsappUrl = `https://wa.me/${cleanPhone}?text=${encodeURIComponent(whatsappMessage)}`;
+
+    // Optional background sync if an endpoint is configured
     const endpoint = config.formEndpoint ? config.formEndpoint.trim() : '';
-
-    const payload = {
-      fullName,
-      businessName: businessName || 'Not specified',
-      email,
-      whatsapp: whatsapp || 'Not provided',
-      projectType,
-      budget,
-      timeline,
-      description,
-      submittedAt: new Date().toISOString()
-    };
-
-    // If a valid server endpoint is provided
     if (endpoint && endpoint.startsWith('http')) {
-      try {
-        const response = await fetch(endpoint, {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-          body: JSON.stringify(payload)
-        });
+      fetch(endpoint, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body: JSON.stringify({
+          fullName, businessName, email, whatsapp, projectType, budget, timeline, description,
+          submittedAt: new Date().toISOString()
+        })
+      }).catch(() => {});
+    }
 
-        if (response.ok) {
-          form.reset();
-          showFormNotice('Thank you! Your project inquiry has been delivered. We will review your requirements and reach out shortly.', 'success');
-          showToast('✓ Inquiry submitted successfully!', 'success');
-        } else {
-          throw new Error('Server returned an error status.');
-        }
-      } catch (err) {
-        showFormNotice('Submission encountered an issue. Initiating direct email fallback...', 'error');
-        openMailtoFallback(payload);
-      } finally {
+    showFormNotice('Opening WhatsApp with your project details...', 'success');
+    showToast('Redirecting to WhatsApp...', 'success');
+
+    // Execute direct redirect to WhatsApp
+    setTimeout(() => {
+      window.location.href = whatsappUrl;
+
+      setTimeout(() => {
         submitBtn.innerHTML = originalBtnText;
         submitBtn.disabled = false;
-      }
-    } else {
-      // Backend not yet configured: provide transparent and reliable email/WhatsApp draft
-      submitBtn.innerHTML = originalBtnText;
-      submitBtn.disabled = false;
-
-      showFormNotice(
-        'Backend endpoint not yet configured in config.js. Generating prefilled email and WhatsApp draft now...',
-        'info'
-      );
-
-      openMailtoFallback(payload);
-    }
+        form.reset();
+        
+        if (noticeBox) {
+          noticeBox.className = 'form-feedback-notice success';
+          noticeBox.style.display = 'block';
+          noticeBox.innerHTML = `
+            <span>WhatsApp opened! If it didn't open automatically, </span>
+            <a href="${whatsappUrl}" target="_blank" rel="noopener noreferrer" style="color:#25d366; font-weight:bold; text-decoration:underline;">click here to open WhatsApp directly →</a>
+          `;
+        }
+      }, 1500);
+    }, 350);
   });
 
   function showFormNotice(msg, type) {
@@ -331,34 +339,6 @@ function initInquiryForm() {
     noticeBox.className = `form-feedback-notice ${type}`;
     noticeBox.textContent = msg;
     noticeBox.style.display = 'block';
-  }
-
-  function openMailtoFallback(data) {
-    const config = window.WEBCRAFT_CONFIG || {};
-    const targetEmail = config.emailAddress || 'webbcraft.dev1@gmail.com';
-
-    const subject = encodeURIComponent(`Project Inquiry: ${data.projectType} - ${data.fullName}`);
-    const body = encodeURIComponent(
-`Hi WebCraft.dev,
-
-Here are my website project details from WebCraft.dev:
-
-• Full Name: ${data.fullName}
-• Business Name: ${data.businessName}
-• Email: ${data.email}
-• WhatsApp / Phone: ${data.whatsapp}
-• Project Type: ${data.projectType}
-• Budget: ${data.budget}
-• Target Timeline: ${data.timeline}
-
-Project Description & Goals:
-${data.description}
-
-Looking forward to your response.`
-    );
-
-    const mailtoLink = `mailto:${targetEmail}?subject=${subject}&body=${body}`;
-    window.location.href = mailtoLink;
   }
 }
 
